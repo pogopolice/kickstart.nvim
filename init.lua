@@ -816,12 +816,81 @@ require('lazy').setup({
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
+      require("catppuccin").setup({
+        flavour = "mocha", -- Options: latte, frappe, macchiato, mocha
+        transparent_background = false,
+        term_colors = true,
+        integrations = {
+          nvimtree = true,
+          telescope = true,
+          treesitter = true,
+          native_lsp = {
+            enabled = true,
+            virtual_text = {
+              errors = { "italic" },
+              hints = { "italic" },
+              warnings = { "italic" },
+              information = { "italic" },
+              ok = { "italic" },
+            },
+            underlines = {
+              errors = { "underline" },
+              hints = { "underline" },
+              warnings = { "underline" },
+              information = { "underline" },
+              ok = { "underline" },
+            },
+            inlay_hints = {
+              background = true,
+            },
+          },
+          lsp_trouble = true,
+          lsp_saga = true,
+          gitsigns = true,
+          nvimtree = true,
+          which_key = true,
+          indent_blankline = {
+            enabled = true,
+          },
+          dashboard = true,
+          neogit = true,
+          vim_sneak = true,
+          fern = true,
+          barbar = true,
+          bufferline = true,
+          markdown = true,
+          lightspeed = true,
+          ts_rainbow = true,
+          hop = true,
+          blink_cmp = true,
+          cmp = true,
+          dap = true,
+          dap_ui = true,
+          fzf = true,
+          alpha = true,
+          rainbow_delimiters = true,
+          render_markdown = true,
+          illuminate = {
+            enabled = true,
+            lsp = true,
+          },
+          dropbar = {
+            enabled = true,
+            color_mode = true,
+          },
+          mini = {
+            enabled = true,
+          },
+          colorful_winsep = {
+            enabled = false,
+            color = "red",
+          },
+          navic = {
+            enabled = false,
+          },
+          ufo = true,
         },
-      }
-
+    })
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
