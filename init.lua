@@ -363,6 +363,12 @@ require('lazy').setup({
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
+          vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
+          vim.keymap.set("n", "<space>en", function ()
+            require('telescope.builtin').find_files {
+              cwd = vim.fn.stdpath("config")
+            }
+          end)
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
       -- many different aspects of Neovim, your workspace, LSP, and more!
