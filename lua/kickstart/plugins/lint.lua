@@ -11,8 +11,13 @@ return {
       markdown = { 'markdownlint' }, -- Make sure to install `markdownlint` via mason / npm
       sh = { 'shellcheck' },
       bash = { 'shellcheck' },
-      yaml = { 'cfn_lint' },
-      json = { 'cfn_lint' },
+      yaml = { 'yamllint' },
+      ['yaml.ansible'] = { 'ansible-lint' },
+      ['yaml.cloudformation'] = { 'cfn-lint' },
+      ['json.cloudformation'] = { 'cfn-lint' },
+      ['yaml.docker-compose'] = { 'hadolint' },
+      ['dockerfile'] = { 'hadolint' },
+      json = { 'jsonlint' },
     }
 
     -- To allow other plugins to add linters to require('lint').linters_by_ft,
