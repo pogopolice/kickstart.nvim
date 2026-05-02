@@ -12,10 +12,9 @@ return {
       sh = { 'shellcheck' },
       bash = { 'shellcheck' },
       yaml = { 'yamllint' },
-      ['yaml.ansible'] = { 'ansible-lint' },
+      ['yaml.ansible'] = { 'ansible_lint' },
       ['yaml.cloudformation'] = { 'cfn-lint' },
       ['json.cloudformation'] = { 'cfn-lint' },
-      ['yaml.docker-compose'] = { 'hadolint' },
       ['dockerfile'] = { 'hadolint' },
       json = { 'jsonlint' },
     }
