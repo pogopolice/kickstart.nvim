@@ -681,6 +681,16 @@ do
     end,
   })
 
+  -- Disabling semantic tokens to prevent lockup on terraform lsp
+  vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.server_capabilities then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
+  end,
+})
+
   -- Enable the following language servers
   --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
   --  See `:help lsp-config` for information about keys and how to configure
